@@ -7,6 +7,7 @@ void setup()
   
   float[] x, y;
   int i;
+  int px, py;
   
   x = new float[N];
   y = new float[N];
@@ -20,13 +21,15 @@ void setup()
     y[i] = sin(x[i]);
   }
   
-  draw_with_grafica(x, y);
+  px = 25;
+  py = 25;
+  draw_with_grafica(x, y, px, py);
     
     
 }
 
  
-void draw_with_grafica(float x[], float y[]){
+void draw_with_grafica(float x[], float y[], int px, int py){
   //size(500, 350);
   //background(150);
  
@@ -41,7 +44,7 @@ void draw_with_grafica(float x[], float y[]){
   print(points);
   // Create a new plot and set its position on the screen
   GPlot plot = new GPlot(this);
-  plot.setPos(25, 25);
+  plot.setPos(px, py);
    
   // Set the plot title and the axis labels
   plot.setPoints(points);
